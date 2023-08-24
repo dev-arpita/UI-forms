@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 
-*,
-*::before,
-*:after {
+* {
     box-sizing: border-box;
 }
 
@@ -14,9 +12,9 @@ body {
 
 body {
     font-family: 'Nunito', sans-serif;
-    font-size: 16px;
     background: #F0F0F0;
     color: #1A004E;
+    height: 100vh;
 }
 
 .wrapper {
@@ -33,7 +31,7 @@ ul {
     justify-content: space-between;
 }
 
-a {
+ul li a {
     text-decoration: none;
 }
 
@@ -64,6 +62,7 @@ span {
 }
 
 main {
+    display: block;
     background: white;
     padding: 1em;
     text-align: left;
@@ -88,52 +87,96 @@ h2:before {
     border-radius: 1em;
 }
 
-label,
-input {
+label {
     display: block;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
 }
 
-input {
+input[type=text],
+select,
+textarea {
     width: 100%;
-    margin-top: 5px;
-    margin-right: 1rem;
-    padding: 1rem 0 1rem 0.8rem;
-    background: #F0F0F0;
-    border: 0;
-    color: #1A004E;
-    margin-bottom: 1rem;
+    padding: 1em;
+    border-radius: .2em;
+    border: 1px solid #ACACAC;
+    color: #1B1820;
 }
 
-.error-field {
-    outline: 3px solid #FFB3B3;
+input[type=text]:focus,
+textarea:focus {
+    outline: 3px solid #ACACAC;
+}
+
+.left-col .error-field {
+    border: 3px solid #FFB3B3;
 }
 
 .error {
-    background:#FFB3B3;
-    align-self: start;
-    padding: 0.3rem 0.5rem;
-    margin-top: -2rem;
-    margin-left: -3px;
-    font-weight: 700;
-}
-
-.left-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    background: #FFB3B3;
+    display: inline-block;
+    padding: .3em .5em;
+    font-size: .85em;
+    font-weight: bold;
+    margin-top: -.1em;
 }
 
 .cta {
-    padding: 1rem;
-    background-color: #8040FF;
-    color: #fff;
-    font-size: 1.5rem;
+    display: block;
+    min-width: 300px;
+    padding: 1em;
     text-align: center;
-    margin-top: .8rem;
-    border-radius: .2rem;
-    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    background: #8040FF;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: .2em;
 }
 
-input[type=text]:focus {
-    outline: 3px solid #1A004E;
+.right-col {
+    margin-top: 2em;
+    line-height: 1.5em;
+    color: #1B1820;
+}
+
+@media(min-width: 600px) {
+    main {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 60% auto;
+    }
+
+    .left-col {
+        margin-left: 1rem;
+    }
+
+    .right-col {
+        margin-top: 0;
+        line-height: 1.6;
+    }
+
+    .cta {
+        width: 50%;
+    }
+}
+
+@media(min-width: 950px) {
+    body {
+        font-size: 18px;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding-left: 0;
+        padding: 1rem 2rem;
+        grid-template-columns: 65% auto;
+    }
+
+    .cta {
+        float: right;
+    }
 }
