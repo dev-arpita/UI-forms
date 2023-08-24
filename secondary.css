@@ -43,6 +43,9 @@ input[type="radio"]:checked::before {
     font-weight: normal;
     margin-right: 2em;
 }
+.left-col {
+    display: block;
+}
 
 .mt-extra {
     margin-top: 2em;
